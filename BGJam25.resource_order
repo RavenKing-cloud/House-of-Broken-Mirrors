@@ -1,0 +1,28 @@
+{
+  "FolderOrderSettings":[
+    {"name":"Controllers","order":8,"path":"folders/Objects/Controllers.yy",},
+    {"name":"Effects","order":10,"path":"folders/Objects/Effects.yy",},
+    {"name":"Interactables","order":5,"path":"folders/Objects/Interactables.yy",},
+    {"name":"Player","order":9,"path":"folders/Objects/Player.yy",},
+    {"name":"Boxes","order":6,"path":"folders/Sprites/Boxes.yy",},
+    {"name":"Interactables","order":1,"path":"folders/Sprites/Interactables.yy",},
+    {"name":"Platforms","order":2,"path":"folders/Sprites/Platforms.yy",},
+  ],
+  "ResourceOrderSettings":[
+    {"name":"oCamBox","order":2,"path":"objects/oCamBox/oCamBox.yy",},
+    {"name":"oGate","order":4,"path":"objects/oGate/oGate.yy",},
+    {"name":"oGateSwitch","order":3,"path":"objects/oGateSwitch/oGateSwitch.yy",},
+    {"name":"oIntroWipe","order":1,"path":"objects/oIntroWipe/oIntroWipe.yy",},
+    {"name":"oKillBox","order":2,"path":"objects/oKillBox/oKillBox.yy",},
+    {"name":"oPlayer","order":1,"path":"objects/oPlayer/oPlayer.yy",},
+    {"name":"oWall","order":11,"path":"objects/oWall/oWall.yy",},
+    {"name":"Demo","order":2,"path":"rooms/Demo/Demo.yy",},
+    {"name":"Init","order":1,"path":"rooms/Init/Init.yy",},
+    {"name":"KillBox","order":1,"path":"sprites/KillBox/KillBox.yy",},
+    {"name":"PlayerIdle","order":2,"path":"sprites/PlayerIdle/PlayerIdle.yy",},
+    {"name":"RespawnTemplate","order":8,"path":"sprites/RespawnTemplate/RespawnTemplate.yy",},
+    {"name":"sSwitchActive","order":3,"path":"sprites/sSwitchActive/sSwitchActive.yy",},
+    {"name":"TemplateGate","order":3,"path":"sprites/TemplateGate/TemplateGate.yy",},
+    {"name":"TemplateTile","order":2,"path":"sprites/TemplateTile/TemplateTile.yy",},
+  ],
+}
