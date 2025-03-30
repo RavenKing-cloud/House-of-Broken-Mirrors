@@ -31,12 +31,27 @@ if (state == "fade_in") {
                     x = _closest_respawn.x;
                     y = _closest_respawn.y;
 
-                    // Face correct direction based on cam box position
-                    var _left_edge = last_cam_box.bbox_left;
-                    var _right_edge = last_cam_box.bbox_right;
-                    var _dist_left = abs(x - _left_edge);
-                    var _dist_right = abs(x - _right_edge);
-                    facingDir = (_dist_right > _dist_left) ? 1 : -1;
+				// === Face correct direction based on furthest cam box boundary ===
+				if (instance_exists(last_cam_box)) {
+				    var box = last_cam_box;
+
+				    var cam_left   = box.bbox_left;
+				    var cam_right  = box.bbox_right;
+				    var cam_top    = box.bbox_top;
+				    var cam_bottom = box.bbox_bottom;
+
+				    var d_left   = abs(x - cam_left);
+				    var d_right  = abs(cam_right - x);
+				    var d_top    = abs(y - cam_top);
+				    var d_bottom = abs(cam_bottom - y);
+
+				    var max_dist = max(d_left, d_right, d_top, d_bottom);
+
+				    if (max_dist == d_left) facing_dir = "west";
+				    else if (max_dist == d_right) facing_dir = "east";
+				    else if (max_dist == d_top) facing_dir = "north";
+				    else if (max_dist == d_bottom) facing_dir = "south";
+				}
 
                     // Reset movement target if needed
                     target_x = x;

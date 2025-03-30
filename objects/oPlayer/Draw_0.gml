@@ -1,5 +1,19 @@
-// Draw Player
-draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha)
+// Draw event (or Draw GUI if you prefer HUD overlay)
+draw_self(); // Keep drawing the player sprite
+
+var length = 20;
+var x2 = x, y2 = y;
+
+switch (facing_dir) {
+    case "north": y2 -= length; break;
+    case "south": y2 += length; break;
+    case "east":  x2 += length; break;
+    case "west":  x2 -= length; break;
+}
+
+draw_set_color(c_red);
+draw_line(x, y, x2, y2);
+
 
 // Debug - Show the collision mask outline
 if (global.debug_mode) {

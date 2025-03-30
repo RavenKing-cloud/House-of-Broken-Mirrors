@@ -1,4 +1,3 @@
-
 // === GET CONTROLS ===
 getControls();
 
@@ -8,7 +7,7 @@ if (global.freeze_player || is_dead) {
     previousLeft  = leftKey;
     previousUp    = upKey;
     previousDown  = downKey;
-    return; // Skip entire movement/input block
+    return;
 }
 
 // === INPUT DETECTION (fresh press only) ===
@@ -18,12 +17,11 @@ var upPressed    = upKey    && !previousUp;
 var downPressed  = downKey  && !previousDown;
 
 // === EASE TOWARD TARGET POSITION ===
-// Use lerp() to move towards target_x and target_y smoothly
-var move_speed = 0.5; // Between 0 (no movement) and 1 (instant)
+var move_speed = 0.5;
 x = lerp(x, target_x, move_speed);
 y = lerp(y, target_y, move_speed);
 
-// Optional: Snap to target when very close to avoid jitter
+// Snap when close
 if (point_distance(x, y, target_x, target_y) < 1) {
     x = target_x;
     y = target_y;
@@ -31,20 +29,13 @@ if (point_distance(x, y, target_x, target_y) < 1) {
 
 // === MOVEMENT CONTROL ===
 if (x == target_x && y == target_y) {
+    if (move_buffer > 0) move_buffer--;
 
-    // Decrease buffer cooldown if active
-    if (move_buffer > 0) {
-        move_buffer--;
-    }
-
-    // Read one-frame directional input
     var h = (rightPressed ? 1 : 0) - (leftPressed ? 1 : 0);
     var v = (downPressed ? 1 : 0) - (upPressed ? 1 : 0);
 
-    // Only allow one direction at a time
     if (h != 0) v = 0;
 
-    // Store buffered input (last pressed direction)
     if (h != 0 || v != 0) {
         buffered_h = h;
         buffered_v = v;
@@ -57,6 +48,12 @@ if (x == target_x && y == target_y) {
         if (can_move_to(new_x, new_y)) {
             target_x = new_x;
             target_y = new_y;
+
+            // === FACING DIR UPDATE ===
+            if (buffered_h == 1) facing_dir = "east";
+            else if (buffered_h == -1) facing_dir = "west";
+            else if (buffered_v == 1) facing_dir = "south";
+            else if (buffered_v == -1) facing_dir = "north";
 
             move_buffer = buffer_time;
         }
@@ -72,7 +69,7 @@ previousLeft  = leftKey;
 previousUp    = upKey;
 previousDown  = downKey;
 
-// Kill Box Trigger
+// === DEATH CHECK ===
 if (!is_dead && place_meeting(x, y, oKillBox)) {
     is_dead = true;
     global.freeze_player = true;
@@ -81,15 +78,11 @@ if (!is_dead && place_meeting(x, y, oKillBox)) {
     wipe.originator = id;
 }
 
-
-// ===================
 // === CAMERA BOX CHECK ===
-// ===================
 if (!global.camTransitionActive) {
     var newCamBox = instance_position(x, y, oCamBox);
 
     if (newCamBox != noone && newCamBox != currentCamBox) {
-        // Compute area overlap
         var overlap_left   = max(bbox_left, newCamBox.x);
         var overlap_top    = max(bbox_top, newCamBox.y);
         var overlap_right  = min(bbox_right, newCamBox.x + newCamBox.sprite_width);
@@ -117,20 +110,14 @@ if (!global.camTransitionActive) {
     }
 }
 
-// ===================
-// === LAST CAM BOX TRACKER (FOR RESPAWN)
-// ===================
+// === LAST CAM BOX TRACKER ===
 var _box = instance_place(x, y, oCamBox);
 if (_box != noone) {
     last_cam_box = _box;
     global.last_cam_box = _box;
 }
 
-// ===================
 // === DEBUG MODE TOGGLE ===
-// ===================
 if (debugKey) {
     global.debug_mode = !global.debug_mode;
 }
-
-

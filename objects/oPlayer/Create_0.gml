@@ -3,14 +3,16 @@ controlsSetup()
 
 global.tile_size = 16; // or whatever your tile size is
 
+facing_dir = "south"; // default direction
 is_dead = false;
 
 // Target position to move to
 target_x = x;
 target_y = y;
 
-tile_size = 16;
+
 // Snap to grid on start
+tile_size = 16;
 x = round(x / tile_size) * tile_size;
 y = round(y / tile_size) * tile_size;
 
@@ -38,6 +40,6 @@ last_cam_box = noone;
 // In the Create event of an appropriate controller or player object:
 global.last_cam_box = instance_find(oCamBox, 0); // Ensure this is set to a valid instance
 
-
 // Debug Mode
 global.debug_mode = false; // Initialize debug mode to be off by default
+
