@@ -57,7 +57,11 @@ if (x == target_x && y == target_y) {
         if (can_move_to(new_x, new_y)) {
             target_x = new_x;
             target_y = new_y;
-
+			global.turn_count++;
+			with oEnemy {
+				buffered_h = other.buffered_h;
+				buffered_v = other.buffered_v;
+			}
             move_buffer = buffer_time;
         }
 

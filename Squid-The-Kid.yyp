@@ -1,6 +1,6 @@
 {
   "$GMProject":"",
-  "%Name":"BGJam25",
+  "%Name":"Squid-The-Kid",
   "AudioGroups":[
     {"$GMAudioGroup":"","%Name":"audiogroup_default","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
   ],
@@ -15,7 +15,6 @@
     {"$GMFolder":"","%Name":"Objects","folderPath":"folders/Objects.yy","name":"Objects","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Controllers","folderPath":"folders/Objects/Controllers.yy","name":"Controllers","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Effects","folderPath":"folders/Objects/Effects.yy","name":"Effects","resourceType":"GMFolder","resourceVersion":"2.0",},
-    {"$GMFolder":"","%Name":"Enemies","folderPath":"folders/Objects/Enemies.yy","name":"Enemies","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Interactables","folderPath":"folders/Objects/Interactables.yy","name":"Interactables","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Player","folderPath":"folders/Objects/Player.yy","name":"Player","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Paths","folderPath":"folders/Paths.yy","name":"Paths","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -25,7 +24,6 @@
     {"$GMFolder":"","%Name":"Sounds","folderPath":"folders/Sounds.yy","name":"Sounds","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Sprites","folderPath":"folders/Sprites.yy","name":"Sprites","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Boxes","folderPath":"folders/Sprites/Boxes.yy","name":"Boxes","resourceType":"GMFolder","resourceVersion":"2.0",},
-    {"$GMFolder":"","%Name":"Enemies","folderPath":"folders/Sprites/Enemies.yy","name":"Enemies","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Interactables","folderPath":"folders/Sprites/Interactables.yy","name":"Interactables","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Platforms","folderPath":"folders/Sprites/Platforms.yy","name":"Platforms","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Player","folderPath":"folders/Sprites/Player.yy","name":"Player","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -37,12 +35,11 @@
   "MetaData":{
     "IDEVersion":"2024.11.0.179",
   },
-  "name":"BGJam25",
+  "name":"Squid-The-Kid",
   "resources":[
     {"id":{"name":"oCamBox","path":"objects/oCamBox/oCamBox.yy",},},
     {"id":{"name":"oCamera","path":"objects/oCamera/oCamera.yy",},},
     {"id":{"name":"oDeathWipe","path":"objects/oDeathWipe/oDeathWipe.yy",},},
-    {"id":{"name":"oEnemy","path":"objects/oEnemy/oEnemy.yy",},},
     {"id":{"name":"oGate","path":"objects/oGate/oGate.yy",},},
     {"id":{"name":"oGateSwitch","path":"objects/oGateSwitch/oGateSwitch.yy",},},
     {"id":{"name":"oIntroWipe","path":"objects/oIntroWipe/oIntroWipe.yy",},},
@@ -54,9 +51,7 @@
     {"id":{"name":"Demo","path":"rooms/Demo/Demo.yy",},},
     {"id":{"name":"Init","path":"rooms/Init/Init.yy",},},
     {"id":{"name":"customFuncs","path":"scripts/customFuncs/customFuncs.yy",},},
-    {"id":{"name":"returnToOrigin","path":"scripts/returnToOrigin/returnToOrigin.yy",},},
     {"id":{"name":"CamBox","path":"sprites/CamBox/CamBox.yy",},},
-    {"id":{"name":"EnemyIdle","path":"sprites/EnemyIdle/EnemyIdle.yy",},},
     {"id":{"name":"KillBox","path":"sprites/KillBox/KillBox.yy",},},
     {"id":{"name":"PlayerIdle","path":"sprites/PlayerIdle/PlayerIdle.yy",},},
     {"id":{"name":"RespawnTemplate","path":"sprites/RespawnTemplate/RespawnTemplate.yy",},},

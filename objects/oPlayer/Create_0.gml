@@ -2,6 +2,7 @@
 controlsSetup()
 
 global.tile_size = 16; // or whatever your tile size is
+global.turn_count = 0;
 
 is_dead = false;
 

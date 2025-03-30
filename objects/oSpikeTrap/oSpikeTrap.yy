@@ -1,12 +1,12 @@
 {
   "$GMObject":"",
-  "%Name":"oGateSwitch",
+  "%Name":"oSpikeTrap",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"oEnemy","path":"objects/oEnemy/oEnemy.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oGateSwitch",
+  "name":"oSpikeTrap",
   "overriddenProperties":[],
   "parent":{
     "name":"Interactables",
@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sSwitchActive",
-    "path":"sprites/sSwitchActive/sSwitchActive.yy",
+    "name":"SpikeTrap",
+    "path":"sprites/SpikeTrap/SpikeTrap.yy",
   },
   "spriteMaskId":null,
   "visible":true,
