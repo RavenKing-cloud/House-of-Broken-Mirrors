@@ -1,12 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"oGateSwitch",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"OEnemy_parent","path":"objects/OEnemy_parent/OEnemy_parent.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"oGate_parent",
+  "eventList":[],
   "managed":true,
-  "name":"oGateSwitch",
+  "name":"oGate_parent",
   "overriddenProperties":[],
   "parent":{
     "name":"Interactables",
@@ -30,10 +27,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"sSwitchActive",
-    "path":"sprites/sSwitchActive/sSwitchActive.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

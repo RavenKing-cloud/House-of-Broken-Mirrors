@@ -5,9 +5,9 @@ if (state == "fade_in") {
         respawn_triggered = true;
 		
 		// return objects to original;
-		returnToOrigin(oEnemy);
-		returnToOrigin(oSpikeTrap);
-
+		show_debug_message("???")
+		returnToOriginAll();
+		
         if (instance_exists(originator)) {
             with (originator) {
                 var _closest_respawn = noone;

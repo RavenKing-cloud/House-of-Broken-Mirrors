@@ -1,8 +1,5 @@
 // TODO: Fix Glitch where it gets stuck on walls every once in a while!
 
-
-if (is_inactive) return;
-
 // === EASE TOWARD TARGET POSITION ===
 var move_speed = 0.5;
 x = lerp(x, target_x, move_speed);
@@ -80,7 +77,6 @@ if (x == target_x && y == target_y) {
     }
 }
 
-// === DEATH BY KILLBOX ===
-if (place_meeting(x, y, oKillBox)) {
-    is_inactive = true;
-}
+// move the hitbox
+killbox.x = x-4;
+killbox.y = y-4;

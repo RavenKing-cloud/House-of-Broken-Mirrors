@@ -12,7 +12,10 @@
     "name":"Interactables",
     "path":"folders/Objects/Interactables.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"oGate_parent",
+    "path":"objects/oGate_parent/oGate_parent.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

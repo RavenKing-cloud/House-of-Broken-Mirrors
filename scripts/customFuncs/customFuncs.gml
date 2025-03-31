@@ -45,6 +45,11 @@ function can_move_to(_x, _y) {
 	
     var toggle_check = instance_place(_x, _y, oToggleWall);
     if (toggle_check != noone && toggle_check.active) return false;
+	
+	if object_get_parent(object_index) = OEnemy_parent{
+	var enemy_check = instance_place(_x, _y, OEnemy_parent);
+    if (enemy_check != noone) return false;
+	}
 
     return true;
 }

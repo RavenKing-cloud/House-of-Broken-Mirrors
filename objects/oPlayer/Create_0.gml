@@ -45,3 +45,8 @@ global.last_cam_box = instance_find(oCamBox, 0); // Ensure this is set to a vali
 // Debug Mode
 global.debug_mode = false; // Initialize debug mode to be off by default
 
+// default spawn
+x+=8;
+y+=8;
+instance_create_layer(x,y,"instances",oRespawn);
+

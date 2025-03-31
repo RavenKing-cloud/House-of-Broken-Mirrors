@@ -1,16 +1,16 @@
 {
   "$GMObject":"",
-  "%Name":"oMirCrumble",
+  "%Name":"OEnemy_parent",
   "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"oKillBox","path":"objects/oKillBox/oKillBox.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oMirCrumble",
+  "name":"OEnemy_parent",
   "overriddenProperties":[],
   "parent":{
-    "name":"Interactables",
-    "path":"folders/Objects/Interactables.yy",
+    "name":"Enemies",
+    "path":"folders/Objects/Enemies.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -30,10 +30,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"sCrumbleActive",
-    "path":"sprites/sCrumbleActive/sCrumbleActive.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

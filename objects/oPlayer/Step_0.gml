@@ -113,7 +113,7 @@ if (!is_dead && place_meeting(x, y, oKillBox)) {
 
     var wipe = instance_create_layer(x, y, layer_exists("Effects") ? "Effects" : layer_get_name(0), oDeathWipe);
     wipe.originator = id;
-} else if (!is_dead && place_meeting(x, y, oMirCreeper)) {
+} /*else if (!is_dead && place_meeting(x, y, oMirCreeper)) {
     is_dead = true;
     global.freeze_player = true;
 
@@ -129,7 +129,7 @@ if (!is_dead && place_meeting(x, y, oKillBox)) {
 
     var wipe = instance_create_layer(x, y, layer_exists("Effects") ? "Effects" : layer_get_name(0), oDeathWipe);
     wipe.originator = id;
-}
+}*/
 
 // === CAMERA BOX CHECK ===
 if (!global.camTransitionActive) {
@@ -157,6 +157,9 @@ if (!global.camTransitionActive) {
 
     if (global.camTransitionTimer >= global.camTransitionDuration) {
         currentCamBox = global.targetCamBox;
+		returnToOriginAll();
+		instance_destroy(oRespawn);
+		instance_create_layer(x,y,"instances",oRespawn);
         global.camTransitionActive = false;
         global.camTransitionTimer = 0;
         global.targetCamBox = noone;
@@ -174,3 +177,5 @@ if (_box != noone) {
 if (debugKey) {
     global.debug_mode = !global.debug_mode;
 }
+/// == game reset for bug
+if (keyboard_check_pressed(ord("R"))) game_restart();
