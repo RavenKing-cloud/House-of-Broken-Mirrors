@@ -1,5 +1,6 @@
-// Draw Player
-draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha)
+// Draw event (or Draw GUI if you prefer HUD overlay)
+draw_self(); // Keep drawing the player sprite
+
 
 // Debug - Show the collision mask outline
 if (global.debug_mode) {

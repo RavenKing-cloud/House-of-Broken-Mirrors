@@ -29,12 +29,22 @@ function getControls()
 	debugKey = keyboard_check_pressed(vk_lcontrol);
 }
 
+// Collisions
 function can_move_to(_x, _y) {
     var tile_check = instance_place(_x, _y, oWall);
     if (tile_check != noone) return false;
 
     var gate_check = instance_place(_x, _y, oGate);
     if (gate_check != noone && gate_check.active) return false;
+	
+    var gate_check2 = instance_place(_x, _y, oGate2);
+    if (gate_check2 != noone && gate_check2.active) return false;
+	
+    var gate_check3 = instance_place(_x, _y, oGate3);
+    if (gate_check3 != noone && gate_check3.active) return false;
+	
+    var toggle_check = instance_place(_x, _y, oToggleWall);
+    if (toggle_check != noone && toggle_check.active) return false;
 
     return true;
 }

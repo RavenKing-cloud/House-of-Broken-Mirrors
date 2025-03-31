@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"PlayerIdle",
-    "path":"sprites/PlayerIdle/PlayerIdle.yy",
+    "name":"PlayerIdleNorth",
+    "path":"sprites/PlayerIdleNorth/PlayerIdleNorth.yy",
   },
   "spriteMaskId":null,
   "visible":true,

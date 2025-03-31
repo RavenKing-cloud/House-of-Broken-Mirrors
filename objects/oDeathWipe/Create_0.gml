@@ -1,7 +1,7 @@
 // === oDeathWipe: Create Event ===
 state = "fade_in";
 alpha = 0;
-fade_speed = 0.02;
+fade_speed = 0.012;
 respawn_triggered = false;
 originator = noone;
 fade_only = false; // Set true for fade-from-black effect (no respawn)
