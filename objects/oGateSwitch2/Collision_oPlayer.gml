@@ -1,4 +1,3 @@
-
-with (oGate) {
+with (oGate2) {
     active = false;
 }
