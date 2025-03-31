@@ -58,6 +58,26 @@ if (x == target_x && y == target_y) {
             else if (buffered_h == -1) facing_dir = "west";
             else if (buffered_v == 1) facing_dir = "south";
             else if (buffered_v == -1) facing_dir = "north";
+			
+			// === SET PLAYER SPRITE BASED ON FACING DIR ===
+			switch (facing_dir) {
+			    case "north":
+			        sprite_index = PlayerIdleNorth;
+			        image_xscale = 1;
+			        break;
+			    case "south":
+			        sprite_index = PlayerIdleSouth;
+			        image_xscale = 1;
+			        break;
+			    case "east":
+			        sprite_index = PlayerIdleEast;
+			        image_xscale = 1;
+			        break;
+			    case "west":
+			        sprite_index = PlayerIdleEast;
+			        image_xscale = -1;
+			        break;
+			}
 
             move_buffer = buffer_time;
 
