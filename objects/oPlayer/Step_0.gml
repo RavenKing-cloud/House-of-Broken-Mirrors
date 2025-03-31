@@ -7,8 +7,12 @@ if (global.freeze_player || is_dead) {
     previousLeft  = leftKey;
     previousUp    = upKey;
     previousDown  = downKey;
+    global.player_just_moved = false;
     return;
 }
+
+// === RESET PLAYER MOVEMENT SIGNAL ===
+global.player_just_moved = false;
 
 // === INPUT DETECTION (fresh press only) ===
 var rightPressed = rightKey && !previousRight;
@@ -56,6 +60,9 @@ if (x == target_x && y == target_y) {
             else if (buffered_v == -1) facing_dir = "north";
 
             move_buffer = buffer_time;
+
+            // === SIGNAL TO MIR CREEPER ===
+            global.player_just_moved = true;
         }
 
         buffered_h = 0;
@@ -71,6 +78,12 @@ previousDown  = downKey;
 
 // === DEATH CHECK ===
 if (!is_dead && place_meeting(x, y, oKillBox)) {
+    is_dead = true;
+    global.freeze_player = true;
+
+    var wipe = instance_create_layer(x, y, layer_exists("Effects") ? "Effects" : layer_get_name(0), oDeathWipe);
+    wipe.originator = id;
+} else if (!is_dead && place_meeting(x, y, oMirCreeper)) {
     is_dead = true;
     global.freeze_player = true;
 

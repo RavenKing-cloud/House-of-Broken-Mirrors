@@ -1,6 +1,7 @@
 // Setup
 controlsSetup()
 
+global.player_just_moved = false;
 global.tile_size = 16; // or whatever your tile size is
 
 facing_dir = "south"; // default direction
