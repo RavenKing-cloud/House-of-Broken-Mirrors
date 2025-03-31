@@ -1,3 +1,5 @@
+if (is_inactive) return;
+
 draw_self();
 
 if (!is_inactive) {

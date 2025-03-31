@@ -101,11 +101,23 @@ if (!is_dead && place_meeting(x, y, oKillBox)) {
     is_dead = true;
     global.freeze_player = true;
 
+    audio_play_sound(sfxDeath, 1, false); // Play the sound once, priority 1
+
     var wipe = instance_create_layer(x, y, layer_exists("Effects") ? "Effects" : layer_get_name(0), oDeathWipe);
     wipe.originator = id;
 } else if (!is_dead && place_meeting(x, y, oMirCreeper)) {
     is_dead = true;
     global.freeze_player = true;
+
+    audio_play_sound(sfxDeath, 1, false); // Same here
+
+    var wipe = instance_create_layer(x, y, layer_exists("Effects") ? "Effects" : layer_get_name(0), oDeathWipe);
+    wipe.originator = id;
+} else if (!is_dead && place_meeting(x, y, oMirShadow)) {
+    is_dead = true;
+    global.freeze_player = true;
+
+    audio_play_sound(sfxDeath, 1, false); // Same here
 
     var wipe = instance_create_layer(x, y, layer_exists("Effects") ? "Effects" : layer_get_name(0), oDeathWipe);
     wipe.originator = id;

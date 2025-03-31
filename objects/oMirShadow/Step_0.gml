@@ -1,3 +1,6 @@
+// TODO: Fix Glitch where it gets stuck on walls every once in a while!
+
+
 if (is_inactive) return;
 
 // === EASE TOWARD TARGET POSITION ===
