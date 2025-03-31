@@ -53,6 +53,13 @@ if (x == target_x && y == target_y) {
             target_x = new_x;
             target_y = new_y;
 
+			global.turn_count++;
+			with oEnemy {
+				buffered_h = other.buffered_h;
+				buffered_v = other.buffered_v;
+			}
+
+
             // === FACING DIR UPDATE ===
             if (buffered_h == 1) facing_dir = "east";
             else if (buffered_h == -1) facing_dir = "west";
@@ -78,6 +85,7 @@ if (x == target_x && y == target_y) {
 			        image_xscale = -1;
 			        break;
 			}
+
 
             move_buffer = buffer_time;
 

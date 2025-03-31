@@ -3,6 +3,10 @@ if (state == "fade_in") {
 
     if (alpha >= 0.98 && !respawn_triggered) {
         respawn_triggered = true;
+		
+		// return objects to original;
+		returnToOrigin(oEnemy);
+		returnToOrigin(oSpikeTrap);
 
         if (instance_exists(originator)) {
             with (originator) {

@@ -3,6 +3,7 @@ controlsSetup()
 
 global.player_just_moved = false;
 global.tile_size = 16; // or whatever your tile size is
+global.turn_count = 0;
 
 facing_dir = "south"; // default direction
 is_dead = false;
