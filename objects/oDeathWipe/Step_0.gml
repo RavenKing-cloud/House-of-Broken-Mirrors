@@ -3,7 +3,11 @@ if (state == "fade_in") {
 
     if (alpha >= 0.98 && !respawn_triggered) {
         respawn_triggered = true;
-
+		
+		// return objects to original;
+		show_debug_message("???")
+		returnToOriginAll();
+		
         if (instance_exists(originator)) {
             with (originator) {
                 var _closest_respawn = noone;

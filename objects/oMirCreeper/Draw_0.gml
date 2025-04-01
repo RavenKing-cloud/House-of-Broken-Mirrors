@@ -1,8 +1,11 @@
-if (is_inactive) return;
 
 draw_self();
 
-if (!is_inactive) {
+
+
+// Debug mode collision mask
+if (global.debug_mode) {
+	if (!is_inactive) {
     var length = 20;
     var x2 = x, y2 = y;
 
@@ -15,10 +18,7 @@ if (!is_inactive) {
 
     draw_set_color(c_red);
     draw_line(x, y, x2, y2);
-}
-
-// Debug mode collision mask
-if (global.debug_mode) {
+	}
     draw_set_color(c_lime);
     draw_set_alpha(0.5);
     draw_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, false);

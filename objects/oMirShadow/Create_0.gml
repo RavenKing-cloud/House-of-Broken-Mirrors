@@ -1,3 +1,4 @@
+event_inherited();
 facing_dir = "east";
 is_inactive = false;
 
@@ -12,3 +13,5 @@ buffered_h = 0;
 buffered_v = 0;
 
 move_buffer = 0;
+
+

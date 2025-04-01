@@ -32,5 +32,5 @@
     "path":"sprites/KillBox/KillBox.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

@@ -1,4 +1,4 @@
-var player_on = place_meeting(x, y, oPlayer);
+var player_on = place_meeting(x, y, oPlayer) || place_meeting(x, y, OEnemy_parent);
 
 if (player_on && !player_was_on) {
     // Player just stepped on → toggle gate

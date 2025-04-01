@@ -77,8 +77,6 @@ if (x == target_x && y == target_y) {
         }
     }
 }
-
-// === DEATH BY KILLBOX ===
-if (place_meeting(x, y, oKillBox)) {
-    is_inactive = true;
-}
+// move the hitbox
+killbox.x = x-4;
+killbox.y = y-4;

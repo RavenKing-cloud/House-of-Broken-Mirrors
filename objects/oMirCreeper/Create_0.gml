@@ -1,3 +1,4 @@
+event_inherited();
 facing_dir = "east";
 turning_dir = "south"; // Can be "north", "south", "east", "west"
 is_inactive = false;

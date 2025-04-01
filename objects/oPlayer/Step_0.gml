@@ -53,6 +53,13 @@ if (x == target_x && y == target_y) {
             target_x = new_x;
             target_y = new_y;
 
+			global.turn_count++;
+			with oEnemy {
+				buffered_h = other.buffered_h;
+				buffered_v = other.buffered_v;
+			}
+
+
             // === FACING DIR UPDATE ===
             if (buffered_h == 1) facing_dir = "east";
             else if (buffered_h == -1) facing_dir = "west";
@@ -78,6 +85,7 @@ if (x == target_x && y == target_y) {
 			        image_xscale = -1;
 			        break;
 			}
+
 
             move_buffer = buffer_time;
 
@@ -108,7 +116,7 @@ if (!is_dead && place_meeting(x, y, oKillBox)) {
 
     var wipe = instance_create_layer(x, y, layer_exists("Effects") ? "Effects" : layer_get_name(0), oDeathWipe);
     wipe.originator = id;
-} else if (!is_dead && place_meeting(x, y, oMirCreeper)) {
+} /*else if (!is_dead && place_meeting(x, y, oMirCreeper)) {
     is_dead = true;
     global.freeze_player = true;
 
@@ -124,7 +132,7 @@ if (!is_dead && place_meeting(x, y, oKillBox)) {
 
     var wipe = instance_create_layer(x, y, layer_exists("Effects") ? "Effects" : layer_get_name(0), oDeathWipe);
     wipe.originator = id;
-}
+}*/
 
 // === CAMERA BOX CHECK ===
 if (!global.camTransitionActive) {
@@ -152,6 +160,9 @@ if (!global.camTransitionActive) {
 
     if (global.camTransitionTimer >= global.camTransitionDuration) {
         currentCamBox = global.targetCamBox;
+		returnToOriginAll();
+		instance_destroy(oRespawn);
+		instance_create_layer(x,y,"instances",oRespawn);
         global.camTransitionActive = false;
         global.camTransitionTimer = 0;
         global.targetCamBox = noone;
@@ -169,3 +180,5 @@ if (_box != noone) {
 if (debugKey) {
     global.debug_mode = !global.debug_mode;
 }
+/// == game reset for bug
+if (keyboard_check_pressed(ord("R"))) game_restart();

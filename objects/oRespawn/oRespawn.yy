@@ -32,5 +32,5 @@
     "path":"sprites/RespawnTemplate/RespawnTemplate.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }
