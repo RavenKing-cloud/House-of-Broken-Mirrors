@@ -32,6 +32,17 @@ previousLeft  = false;
 previousUp    = false;
 previousDown  = false;
 
+// Teleporters
+teleporting = false;
+teleport_target_x = 0;
+teleport_target_y = 0;
+teleport_speed = 2;
+teleport_cooldown = 0;
+teleport_safety_timer = 0;
+last_teleport_id = noone;
+teleport_movement_required = false; // ✅ New flag
+
+
 // Camera
 currentCamBox = noone;
 inTransition = false;

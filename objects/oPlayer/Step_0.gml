@@ -83,6 +83,8 @@ if (x == target_x && y == target_y) {
 
             // === SIGNAL TO MIR CREEPER ===
             global.player_just_moved = true;
+			
+			has_moved_since_teleport = true;
         }
 
         buffered_h = 0;
@@ -95,6 +97,7 @@ previousRight = rightKey;
 previousLeft  = leftKey;
 previousUp    = upKey;
 previousDown  = downKey;
+
 
 // === DEATH CHECK ===
 if (!is_dead && place_meeting(x, y, oKillBox)) {
