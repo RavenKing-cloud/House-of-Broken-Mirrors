@@ -15,7 +15,8 @@ function returnToOrigin(Object){
 			x = origin_x;
 			y = origin_y;
 			image_index = origin_index;
-			if(Object == OEnemy_parent){
+			visible = true;
+			if(Object == oEnemy) || (Object == oMirShadow) || (Object == oMirCreeper) {
 				target_x = x;
 				target_y = y;
 			}

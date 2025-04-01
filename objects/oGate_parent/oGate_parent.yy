@@ -6,8 +6,8 @@
   "name":"oGate_parent",
   "overriddenProperties":[],
   "parent":{
-    "name":"Interactables",
-    "path":"folders/Objects/Interactables.yy",
+    "name":"Gates",
+    "path":"folders/Objects/Interactables/Gates.yy",
   },
   "parentObjectId":null,
   "persistent":false,

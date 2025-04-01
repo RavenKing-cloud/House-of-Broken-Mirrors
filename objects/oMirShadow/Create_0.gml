@@ -1,4 +1,9 @@
-event_inherited();
+
+origin_x = x;
+origin_y = y;
+origin_index = image_index;
+backup_dir = noone;
+
 facing_dir = "east";
 is_inactive = false;
 
@@ -14,4 +19,11 @@ buffered_v = 0;
 
 move_buffer = 0;
 
-
+// Find the cambox that contains this object
+cambox = noone;
+with (oCamBox) {
+    if (other.x >= bbox_left && other.x <= bbox_right &&
+        other.y >= bbox_top && other.y <= bbox_bottom) {
+        other.cambox = id;
+    }
+}

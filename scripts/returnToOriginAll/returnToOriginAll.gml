@@ -7,7 +7,9 @@ function returnToOriginAll(){
 	instance_activate_object(oCamBox);
 	instance_activate_object(oCamera);
 	instance_activate_region(oPlayer.currentCamBox.bbox_left,oPlayer.currentCamBox.bbox_top,oPlayer.currentCamBox.sprite_width,oPlayer.currentCamBox.sprite_height,true);
-	returnToOrigin(OEnemy_parent);
+	returnToOrigin(oEnemy);
+	returnToOrigin(oMirCreeper);
+	returnToOrigin(oMirShadow);
 	returnToOrigin(oSpikeTrap);
 	returnToOrigin(oMirCrumble);
 	returnToOrigin(oGate_parent);

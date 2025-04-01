@@ -13,6 +13,7 @@
   ],
   "ResourceOrderSettings":[
     {"name":"oCamBox","order":2,"path":"objects/oCamBox/oCamBox.yy",},
+    {"name":"oGate_parent","order":8,"path":"objects/oGate_parent/oGate_parent.yy",},
     {"name":"oGate2","order":1,"path":"objects/oGate2/oGate2.yy",},
     {"name":"oGate3","order":2,"path":"objects/oGate3/oGate3.yy",},
     {"name":"oGateSwitch","order":3,"path":"objects/oGateSwitch/oGateSwitch.yy",},
@@ -20,6 +21,7 @@
     {"name":"oGateSwitch3","order":5,"path":"objects/oGateSwitch3/oGateSwitch3.yy",},
     {"name":"oIntroWipe","order":1,"path":"objects/oIntroWipe/oIntroWipe.yy",},
     {"name":"oMirCrumble","order":4,"path":"objects/oMirCrumble/oMirCrumble.yy",},
+    {"name":"oMirGuard","order":2,"path":"objects/oMirGuard/oMirGuard.yy",},
     {"name":"oMirShadow","order":1,"path":"objects/oMirShadow/oMirShadow.yy",},
     {"name":"oPlayer","order":1,"path":"objects/oPlayer/oPlayer.yy",},
     {"name":"oToggleSwitch","order":6,"path":"objects/oToggleSwitch/oToggleSwitch.yy",},
@@ -28,6 +30,7 @@
     {"name":"Demo","order":2,"path":"rooms/Demo/Demo.yy",},
     {"name":"Init","order":1,"path":"rooms/Init/Init.yy",},
     {"name":"KillBox","order":1,"path":"sprites/KillBox/KillBox.yy",},
+    {"name":"MirGuard","order":2,"path":"sprites/MirGuard/MirGuard.yy",},
     {"name":"MirShadow","order":1,"path":"sprites/MirShadow/MirShadow.yy",},
     {"name":"PlayerIdleEast","order":11,"path":"sprites/PlayerIdleEast/PlayerIdleEast.yy",},
     {"name":"PlayerIdleNorth","order":2,"path":"sprites/PlayerIdleNorth/PlayerIdleNorth.yy",},

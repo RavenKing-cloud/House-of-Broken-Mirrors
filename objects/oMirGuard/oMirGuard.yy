@@ -1,13 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"oEnemy",
+  "%Name":"oMirGuard",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oEnemy",
+  "name":"oMirGuard",
   "overriddenProperties":[],
   "parent":{
     "name":"Enemies",
@@ -27,13 +27,16 @@
   "physicsShape":1,
   "physicsShapePoints":[],
   "physicsStartAwake":true,
-  "properties":[],
+  "properties":[
+    {"$GMObjectProperty":"v1","%Name":"facing_dir","filters":[],"listItems":[],"multiselect":false,"name":"facing_dir","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"west","varType":2,},
+    {"$GMObjectProperty":"v1","%Name":"turning_dir","filters":[],"listItems":[],"multiselect":false,"name":"turning_dir","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"south","varType":2,},
+  ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"EnemyIdle",
-    "path":"sprites/EnemyIdle/EnemyIdle.yy",
+    "name":"MirGuard",
+    "path":"sprites/MirGuard/MirGuard.yy",
   },
   "spriteMaskId":null,
   "visible":true,

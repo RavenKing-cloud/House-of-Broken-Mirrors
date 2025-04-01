@@ -91,8 +91,6 @@ if (x == target_x && y == target_y) {
 
             // === SIGNAL TO MIR CREEPER ===
             global.player_just_moved = true;
-			
-			has_moved_since_teleport = true;
         }
 
         buffered_h = 0;
@@ -116,7 +114,7 @@ if (!is_dead && place_meeting(x, y, oKillBox)) {
 
     var wipe = instance_create_layer(x, y, layer_exists("Effects") ? "Effects" : layer_get_name(0), oDeathWipe);
     wipe.originator = id;
-} /*else if (!is_dead && place_meeting(x, y, oMirCreeper)) {
+} else if (!is_dead && place_meeting(x, y, oMirCreeper)) || (!is_dead && place_meeting(x, y, oMirShadow)) || (!is_dead && place_meeting(x, y, oEnemy)) {
     is_dead = true;
     global.freeze_player = true;
 
@@ -124,15 +122,7 @@ if (!is_dead && place_meeting(x, y, oKillBox)) {
 
     var wipe = instance_create_layer(x, y, layer_exists("Effects") ? "Effects" : layer_get_name(0), oDeathWipe);
     wipe.originator = id;
-} else if (!is_dead && place_meeting(x, y, oMirShadow)) {
-    is_dead = true;
-    global.freeze_player = true;
-
-    audio_play_sound(sfxDeath, 1, false); // Same here
-
-    var wipe = instance_create_layer(x, y, layer_exists("Effects") ? "Effects" : layer_get_name(0), oDeathWipe);
-    wipe.originator = id;
-}*/
+}
 
 // === CAMERA BOX CHECK ===
 if (!global.camTransitionActive) {

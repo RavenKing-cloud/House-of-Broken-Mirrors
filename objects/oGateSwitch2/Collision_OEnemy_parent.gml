@@ -1,3 +1,0 @@
-with (oGate) {
-    active = false;
-}

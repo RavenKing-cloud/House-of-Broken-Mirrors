@@ -10,7 +10,7 @@ else {
 	sprite_index = sCrumbleActive;
 }
 
-var player_on_top = place_meeting(x, y, oPlayer) || place_meeting(x, y, OEnemy_parent); // Replace 'oPlayer' with your actual player object name
+var player_on_top = place_meeting(x, y, oPlayer) || place_meeting(x, y, oEnemy) || place_meeting(x, y, oMirCreeper); // Replace 'oPlayer' with your actual player object name
 
 if (player_on_top) {
     has_been_stepped_on = true;
