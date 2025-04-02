@@ -1,14 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"oMirShadow",
+  "%Name":"oMirGuardLoop",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oMirShadow",
+  "name":"oMirGuardLoop",
   "overriddenProperties":[],
   "parent":{
     "name":"Enemies",
@@ -36,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"MirShadow",
-    "path":"sprites/MirShadow/MirShadow.yy",
+    "name":"MirGuard",
+    "path":"sprites/MirGuard/MirGuard.yy",
   },
   "spriteMaskId":null,
   "visible":true,

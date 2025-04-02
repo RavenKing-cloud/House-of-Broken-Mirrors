@@ -27,3 +27,8 @@ with (oCamBox) {
         other.cambox = id;
     }
 }
+
+// After setting origin_x and origin_y
+var fx = instance_create_layer(origin_x, origin_y, "BGEffects", oCircleOfLife);
+fx.center_x = origin_x;
+fx.center_y = origin_y;

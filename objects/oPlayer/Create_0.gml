@@ -11,6 +11,7 @@ is_dead = false;
 // Target position to move to
 target_x = x;
 target_y = y;
+currently_on_one_way = noone;
 
 
 // Snap to grid on start

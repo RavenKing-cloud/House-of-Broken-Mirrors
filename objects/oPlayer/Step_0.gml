@@ -48,79 +48,82 @@ if (x == target_x && y == target_y) {
     if (move_buffer <= 0 && (buffered_h != 0 || buffered_v != 0)) {
         var new_x = x + buffered_h * tile_size;
         var new_y = y + buffered_v * tile_size;
-		
 
-		if (enemy_in_front(new_x, new_y)) {
-		    // Sword attack animation and sound
-		    //sprite_index = PlayerAttackSword;
-		    //image_index = 0;
-		    //image_speed = sprite_get_number(PlayerAttackSword) / 8; // Spread over 8 frames
-		    audio_play_sound(sfxSwordSwing, 1, false);
+        if (enemy_in_front(new_x, new_y)) {
+            audio_play_sound(sfxSwordSwing, 1, false);
+            move_buffer = buffer_time;
 
-		    // Prevent movement
-		    move_buffer = buffer_time;
-
-		    // Facing direction logic
-		    if (buffered_h == 1) facing_dir = "east";
-		    else if (buffered_h == -1) facing_dir = "west";
-		    else if (buffered_v == 1) facing_dir = "south";
-		    else if (buffered_v == -1) facing_dir = "north";
-			
-		    // === Simulate Enemy "Death" ===
-		    with (oEnemy) {
-		        visible = false;
-		        instance_deactivate_object(id); // Or use `instance_deactivate_self();` if inside enemy itself
-		    }
-
-		} else if (can_move_to(new_x, new_y)) {
-			audio_play_sound(sfxPlayerMove, 1, false);
-            target_x = new_x;
-            target_y = new_y;
-
-			global.turn_count++;
-			with oEnemy {
-				buffered_h = other.buffered_h;
-				buffered_v = other.buffered_v;
-			}
-
-
-            // === FACING DIR UPDATE ===
             if (buffered_h == 1) facing_dir = "east";
             else if (buffered_h == -1) facing_dir = "west";
             else if (buffered_v == 1) facing_dir = "south";
             else if (buffered_v == -1) facing_dir = "north";
-			
-			// === SET PLAYER SPRITE BASED ON FACING DIR ===
-			switch (facing_dir) {
-			    case "north":
-			        sprite_index = PlayerIdleNorth;
-			        image_xscale = 1;
-			        break;
-			    case "south":
-			        sprite_index = PlayerIdleSouth;
-			        image_xscale = 1;
-			        break;
-			    case "east":
-			        sprite_index = PlayerIdleEast;
-			        image_xscale = 1;
-			        break;
-			    case "west":
-			        sprite_index = PlayerIdleEast;
-			        image_xscale = -1;
-			        break;
+
+        } else {
+			// === ONE WAY TILE BLOCK CHECK ===
+			var one_way_tile = instance_place(new_x, new_y, oOneWay);
+			if (one_way_tile != noone && variable_instance_exists(one_way_tile, "facing")) {
+			    var block_move = false;
+
+			    switch (one_way_tile.facing) {
+			        case "north":
+			            if (buffered_v == 1 && buffered_h == 0) block_move = true; // Trying to move down onto north-facing tile
+			            break;
+			        case "south":
+			            if (buffered_v == -1 && buffered_h == 0) block_move = true; // Trying to move up onto south-facing tile
+			            break;
+			        case "east":
+			            if (buffered_h == -1 && buffered_v == 0) block_move = true; // Trying to move left onto east-facing tile
+			            break;
+			        case "west":
+			            if (buffered_h == 1 && buffered_v == 0) block_move = true; // Trying to move right onto west-facing tile
+			            break;
+			    }
+
+			    if (block_move) {
+			        //audio_play_sound(sfxBlockedMove, 1, false); // Optional feedback
+			        move_buffer = buffer_time;
+			        buffered_h = 0;
+			        buffered_v = 0;
+			        return;
+			    }
 			}
 
+            // === NORMAL MOVEMENT ===
+            if (can_move_to(new_x, new_y)) {
+                audio_play_sound(sfxPlayerMove, 1, false);
+                target_x = new_x;
+                target_y = new_y;
 
-            move_buffer = buffer_time;
+                global.turn_count++;
+                with oEnemy {
+                    buffered_h = other.buffered_h;
+                    buffered_v = other.buffered_v;
+                }
 
-            // === SIGNAL TO MIR CREEPER ===
-            global.player_just_moved = true;
+                // === FACING DIR UPDATE ===
+                if (buffered_h == 1) facing_dir = "east";
+                else if (buffered_h == -1) facing_dir = "west";
+                else if (buffered_v == 1) facing_dir = "south";
+                else if (buffered_v == -1) facing_dir = "north";
+
+                // === SET PLAYER SPRITE BASED ON FACING DIR ===
+                switch (facing_dir) {
+                    case "north": sprite_index = PlayerIdleNorth; image_xscale = 1; break;
+                    case "south": sprite_index = PlayerIdleSouth; image_xscale = 1; break;
+                    case "east":  sprite_index = PlayerIdleEast;  image_xscale = 1; break;
+                    case "west":  sprite_index = PlayerIdleEast;  image_xscale = -1; break;
+                }
+
+                move_buffer = buffer_time;
+                global.player_just_moved = true;
+            }
         }
 
         buffered_h = 0;
         buffered_v = 0;
     }
 }
+
 
 // === UPDATE PREVIOUS KEY STATES ===
 previousRight = rightKey;
