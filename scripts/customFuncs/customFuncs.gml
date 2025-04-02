@@ -49,6 +49,10 @@ function can_move_to(_x, _y) {
     return true;
 }
 
+function enemy_in_front(_x, _y) {
+    return instance_place(_x, _y, oEnemy) != noone;
+}
+
 
 /// Big Thanks to The Creators of Celeste for these Godlike Helper functions of approach and lerp
 /// and for inspiration in the use of easeing functions for smooth movement! vvv
