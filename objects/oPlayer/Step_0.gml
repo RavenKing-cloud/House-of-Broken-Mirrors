@@ -2,7 +2,7 @@
 getControls();
 
 // === FREEZE LOGIC ===
-if (global.freeze_player || is_dead) {
+if (global.freeze_player || is_dead || global.pause) {
     previousRight = rightKey;
     previousLeft  = leftKey;
     previousUp    = upKey;
