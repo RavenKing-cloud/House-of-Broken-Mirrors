@@ -19,6 +19,10 @@ function returnToOrigin(Object){
 			if(Object == oEnemy) || (Object == oMirShadow) || (Object == oMirCreeper) {
 				target_x = x;
 				target_y = y;
+				if  (Object == oMirCreeper) {
+					facing_dir = "east";
+					turning_dir = "south";
+				}
 			}
 		}
 	}
