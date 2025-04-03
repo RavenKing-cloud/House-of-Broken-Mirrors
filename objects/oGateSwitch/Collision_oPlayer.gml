@@ -11,7 +11,11 @@ if (player_cambox != noone) {
     with (oGate) {
         if (x >= player_cambox.bbox_left && x <= player_cambox.bbox_right &&
             y >= player_cambox.bbox_top && y <= player_cambox.bbox_bottom) {
-            active = false;
+            
+            if (active) { // only if it was active before
+                active = false;
+                audio_play_sound(sfxGateBreak, 0, false); // play your SFX
+            }
         }
     }
 }
