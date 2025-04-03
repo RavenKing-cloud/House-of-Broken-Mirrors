@@ -84,6 +84,7 @@
     {"id":{"name":"returnToOrigin","path":"scripts/returnToOrigin/returnToOrigin.yy",},},
     {"id":{"name":"returnToOriginAll","path":"scripts/returnToOriginAll/returnToOriginAll.yy",},},
     {"id":{"name":"sfxDeath","path":"sounds/sfxDeath/sfxDeath.yy",},},
+    {"id":{"name":"sfxLimbo","path":"sounds/sfxLimbo/sfxLimbo.yy",},},
     {"id":{"name":"sfxPlayerMove","path":"sounds/sfxPlayerMove/sfxPlayerMove.yy",},},
     {"id":{"name":"sfxSwordSwing","path":"sounds/sfxSwordSwing/sfxSwordSwing.yy",},},
     {"id":{"name":"CamBox","path":"sprites/CamBox/CamBox.yy",},},

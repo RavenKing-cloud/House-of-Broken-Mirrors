@@ -44,6 +44,7 @@
     {"name":"Hub","order":4,"path":"rooms/Hub/Hub.yy",},
     {"name":"Init","order":1,"path":"rooms/Init/Init.yy",},
     {"name":"Start","order":6,"path":"rooms/Start/Start.yy",},
+    {"name":"sfxLimbo","order":3,"path":"sounds/sfxLimbo/sfxLimbo.yy",},
     {"name":"sfxPlayerMove","order":2,"path":"sounds/sfxPlayerMove/sfxPlayerMove.yy",},
     {"name":"sfxSwordSwing","order":1,"path":"sounds/sfxSwordSwing/sfxSwordSwing.yy",},
     {"name":"KillBox","order":1,"path":"sprites/KillBox/KillBox.yy",},
