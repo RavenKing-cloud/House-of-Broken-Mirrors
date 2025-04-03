@@ -1,5 +1,6 @@
 // Check for collision with oKillBox first
 if (place_meeting(x, y, oKillBox)) {
+	audio_play_sound(sfxShadowDeath, 3, false);
     kill_and_respawn();
     return;
 }

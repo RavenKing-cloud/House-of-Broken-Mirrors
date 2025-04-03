@@ -1,5 +1,6 @@
 // Check for collision with oKillBox first
 if (place_meeting(x, y, oKillBox)) {
+	audio_play_sound(sfxDemonDeath, 3, false);
     visible = false;
     instance_deactivate_object(id);
     return;
@@ -33,6 +34,7 @@ for (var i = 0; i < array_length(death_enemies); i++) {
 if (found_overlap) {
     overlap_counter++;
     if (overlap_counter >= 3) {
+		audio_play_sound(sfxDemonDeath, 3, false);
 	    visible = false;
 	    instance_deactivate_object(id);
 	    return;

@@ -1,5 +1,6 @@
 // Check for collision with oKillBox first
 if (place_meeting(x, y, oKillBox)) {
+	audio_play_sound(sfxCreeperDeath, 3, false);
     visible = false;
     instance_deactivate_object(id);
     return;
@@ -12,6 +13,7 @@ var my_tile_y = floor(y / tile_size);
 var other_creeper = instance_place(target_x, target_y, oMirCreeper);
 if (other_creeper != noone && other_creeper.id != id) {
     // Die
+		audio_play_sound(sfxCreeperDeath, 3, false);
 	    visible = false;
 	    instance_deactivate_object(id);
 	    return;
@@ -38,6 +40,7 @@ for (var i = 0; i < array_length(death_enemies); i++) {
 if (found_overlap) {
     overlap_counter++;
     if (overlap_counter >= 3) {
+		audio_play_sound(sfxCreeperDeath, 3, false);
 	    visible = false;
 	    instance_deactivate_object(id);
 	    return;

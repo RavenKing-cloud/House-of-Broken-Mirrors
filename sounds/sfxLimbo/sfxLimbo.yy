@@ -12,8 +12,8 @@
   "duration":94.171425,
   "name":"sfxLimbo",
   "parent":{
-    "name":"Sounds",
-    "path":"folders/Sounds.yy",
+    "name":"OST",
+    "path":"folders/Sounds/OST.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

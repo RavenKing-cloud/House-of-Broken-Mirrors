@@ -18,6 +18,7 @@ if (player_on_top) {
 } else {
     if (player_last_step && has_been_stepped_on) {
         // Player stepped off — crumble now
+		audio_play_sound(sfxCrumble, 4, false);
         sprite_index = sCrumbleBroken;
         is_broken = true;
     }
