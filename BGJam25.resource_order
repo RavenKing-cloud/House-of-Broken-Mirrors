@@ -1,12 +1,16 @@
 {
   "FolderOrderSettings":[
+    {"name":"portal","order":1,"path":"folders/Objects/Interactables/portal.yy",},
     {"name":"progression","order":2,"path":"folders/Objects/progression.yy",},
     {"name":"progression","order":1,"path":"folders/Sprites/progression.yy",},
   ],
   "ResourceOrderSettings":[
     {"name":"oLevelGate1","order":1,"path":"objects/oLevelGate1/oLevelGate1.yy",},
     {"name":"oLevelGate2","order":2,"path":"objects/oLevelGate2/oLevelGate2.yy",},
+    {"name":"oPortalDestination","order":1,"path":"objects/oPortalDestination/oPortalDestination.yy",},
     {"name":"Areafinish","order":2,"path":"sprites/Areafinish/Areafinish.yy",},
     {"name":"levelGate2","order":1,"path":"sprites/levelGate2/levelGate2.yy",},
+    {"name":"sPortal","order":1,"path":"sprites/sPortal/sPortal.yy",},
+    {"name":"sPortalDestination","order":2,"path":"sprites/sPortalDestination/sPortalDestination.yy",},
   ],
 }
