@@ -33,8 +33,9 @@ if (alpha <= 0) {
             }
 
             if (_closest_respawn != noone) {
-                x = _closest_respawn.x;
-                y = _closest_respawn.y;
+				var respawn  = instance_create_layer(oPlayer.x,oPlayer.y,"instances",oRespawn);
+                x = respawn.x;
+                y = respawn.y;
                 target_x = x;
                 target_y = y;
 
