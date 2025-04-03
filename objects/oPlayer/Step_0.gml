@@ -101,7 +101,7 @@ if (x == target_x && y == target_y) {
 			    }
 
 			    if (block_move) {
-			        //audio_play_sound(sfxBlockedMove, 1, false); // Optional feedback
+			        audio_play_sound(sfxWallBump, 2, false);
 			        move_buffer = buffer_time;
 			        buffered_h = 0;
 			        buffered_v = 0;
@@ -137,9 +137,10 @@ if (x == target_x && y == target_y) {
 
                 move_buffer = buffer_time;
                 global.player_just_moved = true;
-            }
+            } else if !can_move_to(new_x,new_y) {
+				audio_play_sound(sfxWallBump, 2, false);
+			}
         }
-
         buffered_h = 0;
         buffered_v = 0;
     }

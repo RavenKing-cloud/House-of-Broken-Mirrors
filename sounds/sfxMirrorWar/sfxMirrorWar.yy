@@ -12,8 +12,8 @@
   "duration":78.18448,
   "name":"sfxMirrorWar",
   "parent":{
-    "name":"Sounds",
-    "path":"folders/Sounds.yy",
+    "name":"OST",
+    "path":"folders/Sounds/OST.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
