@@ -1,8 +1,14 @@
 {
   "FolderOrderSettings":[
+    {"name":"Objects","order":1,"path":"folders/Objects.yy",},
     {"name":"portal","order":1,"path":"folders/Objects/Interactables/portal.yy",},
     {"name":"progression","order":2,"path":"folders/Objects/progression.yy",},
+    {"name":"Rooms","order":2,"path":"folders/Rooms.yy",},
+    {"name":"Scripts","order":3,"path":"folders/Scripts.yy",},
+    {"name":"Sounds","order":4,"path":"folders/Sounds.yy",},
+    {"name":"Sprites","order":5,"path":"folders/Sprites.yy",},
     {"name":"progression","order":1,"path":"folders/Sprites/progression.yy",},
+    {"name":"Tilesets","order":6,"path":"folders/Tilesets.yy",},
   ],
   "ResourceOrderSettings":[
     {"name":"oLevelGate1","order":1,"path":"objects/oLevelGate1/oLevelGate1.yy",},
@@ -22,5 +28,8 @@
     {"name":"sPortal","order":1,"path":"sprites/sPortal/sPortal.yy",},
     {"name":"sPortalDestination","order":2,"path":"sprites/sPortalDestination/sPortalDestination.yy",},
     {"name":"sSwitchPressed","order":3,"path":"sprites/sSwitchPressed/sSwitchPressed.yy",},
+    {"name":"War_mirror_world_Tileset","order":1,"path":"sprites/War_mirror_world_Tileset/War_mirror_world_Tileset.yy",},
+    {"name":"Limbo_World","order":2,"path":"tilesets/Limbo_World/Limbo_World.yy",},
+    {"name":"War_mirror_World","order":3,"path":"tilesets/War_mirror_World/War_mirror_World.yy",},
   ],
 }
