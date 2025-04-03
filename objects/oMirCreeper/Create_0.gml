@@ -5,6 +5,8 @@ origin_index = image_index;
 facing_dir = "east";
 turning_dir = "south"; // Can be "north", "south", "east", "west"
 is_inactive = false;
+overlap_counter = 0;
+
 
 move_buffer = 0;
 buffer_time = 6; // Or whatever your player's `buffer_time` is

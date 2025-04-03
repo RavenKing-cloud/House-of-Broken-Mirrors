@@ -2,6 +2,8 @@ origin_x = x;
 origin_y = y;
 origin_index = image_index;
 active = true;
+overlap_counter = 0;
+
 
 // variables
 image_speed = 0;

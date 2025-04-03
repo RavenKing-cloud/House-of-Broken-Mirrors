@@ -23,6 +23,6 @@ if (player_cambox != noone &&
         instance_activate_object(killbox);
     }
     else {
-        alarm[0] = 5;
+        alarm[0] = 1;
     }
 }

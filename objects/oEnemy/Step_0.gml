@@ -5,6 +5,43 @@ if (place_meeting(x, y, oKillBox)) {
     return;
 }
 
+// List of enemy types that cause death on overlap
+var death_enemies = [oMirCreeper, oMirShadow, oMirGuardLoop];
+
+// Get current tile position
+var my_tile_x = floor(x / tile_size);
+var my_tile_y = floor(y / tile_size);
+
+var found_overlap = false;
+
+// Check against each enemy type
+for (var i = 0; i < array_length(death_enemies); i++) {
+    var type = death_enemies[i];
+    with (type) {
+        if (id != other.id) {
+            var tile_x = floor(x / tile_size);
+            var tile_y = floor(y / tile_size);
+
+            if (tile_x == my_tile_x && tile_y == my_tile_y) {
+                found_overlap = true;
+            }
+        }
+    }
+}
+
+// Handle the result
+if (found_overlap) {
+    overlap_counter++;
+    if (overlap_counter >= 3) {
+	    visible = false;
+	    instance_deactivate_object(id);
+	    return;
+    }
+} else {
+    overlap_counter = 0;
+}
+
+
 // Check if enemy exited its assigned cambox
 if (cambox != noone) {
     var outside_cambox = (x < cambox.bbox_left || x > cambox.bbox_right ||
@@ -38,11 +75,14 @@ if (cambox != noone) {
                 var new_x = x - buffered_h * tile_size;
                 var new_y = y - buffered_v * tile_size;
 
-                if (can_move_to(new_x, new_y)) {
-                    target_x = new_x;
-                    target_y = new_y;
-                }
-
+			if (can_move_to(new_x, new_y)) {
+			    // Check if another oEnemy is already at the target tile
+			    var other_enemy = instance_place(new_x, new_y, oEnemy);
+			    if (other_enemy == noone || other_enemy.id == id) {
+			        target_x = new_x;
+			        target_y = new_y;
+			    }
+			}
                 buffered_h = 0;
                 buffered_v = 0;
             }

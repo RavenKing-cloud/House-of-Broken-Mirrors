@@ -5,6 +5,48 @@ if (place_meeting(x, y, oKillBox)) {
     return;
 }
 
+// === PREVENT TILE OVERLAP WITH SAME TYPE ===
+var my_tile_x = floor(x / tile_size);
+var my_tile_y = floor(y / tile_size);
+
+var other_creeper = instance_place(target_x, target_y, oMirCreeper);
+if (other_creeper != noone && other_creeper.id != id) {
+    // Die
+	    visible = false;
+	    instance_deactivate_object(id);
+	    return;
+}
+
+
+// === DIE IF SHARING TILE WITH SPECIFIC ENEMIES FOR 3 FRAMES ===
+var death_enemies = [oMirShadow, oMirGuardLoop];
+var found_overlap = false;
+
+for (var i = 0; i < array_length(death_enemies); i++) {
+    var type = death_enemies[i];
+    with (type) {
+        if (id != other.id) {
+            var tile_x = floor(x / tile_size);
+            var tile_y = floor(y / tile_size);
+            if (tile_x == my_tile_x && tile_y == my_tile_y) {
+                found_overlap = true;
+            }
+        }
+    }
+}
+
+if (found_overlap) {
+    overlap_counter++;
+    if (overlap_counter >= 3) {
+	    visible = false;
+	    instance_deactivate_object(id);
+	    return;
+    }
+} else {
+    overlap_counter = 0;
+}
+
+
 // Check if the enemy has exited its own cambox and the player is no longer in it
 if (cambox != noone) {
     var outside_cambox = (x < cambox.bbox_left || x > cambox.bbox_right ||

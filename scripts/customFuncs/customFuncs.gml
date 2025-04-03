@@ -50,8 +50,16 @@ function can_move_to(_x, _y) {
 }
 
 function enemy_in_front(_x, _y) {
-    return instance_place(_x, _y, oEnemy) != noone;
+    var enemy_types = [oEnemy, oMirCreeper, oMirGuardLoop];
+    
+    for (var i = 0; i < array_length(enemy_types); i++) {
+        if (instance_place(_x, _y, enemy_types[i]) != noone) {
+            return true;
+        }
+    }
+    return false;
 }
+
 
 
 /// Big Thanks to The Creators of Celeste for these Godlike Helper functions of approach and lerp

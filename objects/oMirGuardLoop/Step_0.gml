@@ -1,101 +1,50 @@
-
-// Check for collision with oKillBox first
-if (place_meeting(x, y, oKillBox)) {
-    // The enemy has collided with oKillBox and should now "die"
+// === If we're in the middle of movement ===
+if (move_timer > 0) {
+    move_timer--;
     
-    // Hide the sprite so it is not visible on screen
-    visible = false;
+    // Linear step toward target position
+    var move_step = tile_size / move_cooldown;
+    x = approach(x, target_x, move_step);
+    y = approach(y, target_y, move_step);
     
-    // Deactivate the enemy instance to prevent further processing
-    instance_deactivate_object(id);
-    
-    // Optionally, set a custom flag if further logic depends on the enemy's state
-    // alive = false;
-    
-    // Terminate further execution for this step
-    return;
-}
-
-// Check if player is inside the same cambox
-if (cambox != noone &&
-    oPlayer.x >= cambox.bbox_left && oPlayer.x <= cambox.bbox_right &&
-    oPlayer.y >= cambox.bbox_top && oPlayer.y <= cambox.bbox_bottom) {
-
-    // === EASE TOWARD TARGET POSITION ===
-    var move_speed = 0.5;
-    x = lerp(x, target_x, move_speed);
-    y = lerp(y, target_y, move_speed);
-
-    // Snap to target
-    if (point_distance(x, y, target_x, target_y) < 1) {
+    // Final snap on completion
+    if (move_timer == 0) {
         x = target_x;
         y = target_y;
     }
+    
+    return;
+}
 
-    // === TILE MOVEMENT LOGIC ===
-    if (x == target_x && y == target_y) {
-        if (move_buffer > 0) move_buffer--;
+// === If we're ready to decide next tile ===
+if (x == target_x && y == target_y) {
+    var dx = (axis == "x") ? dir * tile_size : 0;
+    var dy = (axis == "y") ? dir * tile_size : 0;
 
-        if (global.player_just_moved && move_buffer <= 0) {
-            var moved = false;
+    var next_x = x + dx;
+    var next_y = y + dy;
 
-            repeat (4) {
-                var h = 0;
-                var v = 0;
+    var hit_wall = place_meeting(next_x, next_y, oWall);
+    var hit_self = instance_place(next_x, next_y, oMirCreeper);
 
-                switch (facing_dir) {
-                    case "north": v = -1; break;
-                    case "south": v =  1; break;
-                    case "east":  h =  1; break;
-                    case "west":  h = -1; break;
-                }
+    if (hit_wall || (hit_self != noone && hit_self.id != id)) {
+        dir *= -1; // Flip direction
+        // Try the opposite direction immediately
+        dx = (axis == "x") ? dir * tile_size : 0;
+        dy = (axis == "y") ? dir * tile_size : 0;
+        next_x = x + dx;
+        next_y = y + dy;
 
-                var new_x = x + h * tile_size;
-                var new_y = y + v * tile_size;
-
-                if (can_move_to(new_x, new_y)) {
-                    target_x = new_x;
-                    target_y = new_y;
-                    move_buffer = buffer_time;
-                    moved = true;
-                    break;
-                } else {
-                    // Turn instantly when blocked
-                    switch (turning_dir) {
-                        case "north":
-                            if (facing_dir == "east") facing_dir = "north";
-                            else if (facing_dir == "south") facing_dir = "east";
-                            else if (facing_dir == "west") facing_dir = "south";
-                            else facing_dir = "west";
-                            break;
-
-                        case "south":
-                            if (facing_dir == "east") facing_dir = "south";
-                            else if (facing_dir == "north") facing_dir = "east";
-                            else if (facing_dir == "west") facing_dir = "north";
-                            else facing_dir = "west";
-                            break;
-
-                        case "east":
-                            if (facing_dir == "north") facing_dir = "east";
-                            else if (facing_dir == "west") facing_dir = "north";
-                            else if (facing_dir == "south") facing_dir = "west";
-                            else facing_dir = "south";
-                            break;
-
-                        case "west":
-                            if (facing_dir == "north") facing_dir = "west";
-                            else if (facing_dir == "east") facing_dir = "north";
-                            else if (facing_dir == "south") facing_dir = "east";
-                            else facing_dir = "south";
-                            break;
-                    }
-                }
-            }
-
-            if (!moved) {
-                move_buffer = buffer_time;
-            }
+        hit_wall = place_meeting(next_x, next_y, oWall);
+        hit_self = instance_place(next_x, next_y, oMirCreeper);
+        
+        // If blocked both ways, do nothing
+        if (hit_wall || (hit_self != noone && hit_self.id != id)) {
+            return;
         }
     }
+
+    target_x = x + dx;
+    target_y = y + dy;
+    move_timer = move_cooldown;
 }
