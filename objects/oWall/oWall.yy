@@ -32,5 +32,5 @@
     "path":"sprites/TemplateTile/TemplateTile.yy",
   },
   "spriteMaskId":null,
-  "visible":false,
+  "visible":true,
 }

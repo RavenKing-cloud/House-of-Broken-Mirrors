@@ -10,6 +10,7 @@ if (place_meeting(x, y, oKillBox)) {
 var death_enemies = [oMirCreeper, oMirShadow, oMirGuardLoop];
 
 // Get current tile position
+tile_size = 16;
 var my_tile_x = floor(x / tile_size);
 var my_tile_y = floor(y / tile_size);
 
