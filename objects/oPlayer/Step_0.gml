@@ -49,16 +49,37 @@ if (x == target_x && y == target_y) {
         var new_x = x + buffered_h * tile_size;
         var new_y = y + buffered_v * tile_size;
 
-        if (enemy_in_front(new_x, new_y)) {
-            audio_play_sound(sfxSwordSwing, 1, false);
-            move_buffer = buffer_time;
+		if (enemy_in_front(new_x, new_y)) {
+		    audio_play_sound(sfxSwordSwing, 1, false);
+		    move_buffer = buffer_time;
 
-            if (buffered_h == 1) facing_dir = "east";
-            else if (buffered_h == -1) facing_dir = "west";
-            else if (buffered_v == 1) facing_dir = "south";
-            else if (buffered_v == -1) facing_dir = "north";
+		    // Clear previous kill box
+		    if (instance_exists(killbox_instance)) {
+		        instance_destroy(killbox_instance);
+		        killbox_instance = noone;
+		    }
 
-        } else {
+		    var offset_x = 0;
+		    var offset_y = 0;
+		    var dir_angle = 0;
+
+		    if (buffered_h == 1) {
+		        dir_angle = 0; offset_x = 12; offset_y = -4;
+		    }
+		    else if (buffered_h == -1) {
+		        dir_angle = 180; offset_x = -20; offset_y = -4;
+		    }
+		    else if (buffered_v == 1) {
+		        dir_angle = 270; offset_y = 12; offset_x = -4;
+		    }
+		    else if (buffered_v == -1) {
+		        dir_angle = 90; offset_y = -20; offset_x = -4;
+		    }
+
+		    killbox_instance = instance_create_layer(x + offset_x, y + offset_y, "Instances", oKillBoxSword);
+		    killbox_instance.direction = dir_angle;
+		    killbox_timer = 5; // Start kill box countdown
+		} else {
 			// === ONE WAY TILE BLOCK CHECK ===
 			var one_way_tile = instance_place(new_x, new_y, oOneWay);
 			if (one_way_tile != noone && variable_instance_exists(one_way_tile, "facing")) {
@@ -194,6 +215,15 @@ var _box = instance_place(x, y, oCamBox);
 if (_box != noone) {
     last_cam_box = _box; // Store the last `oCamBox` the player was in
 }
+// === KillBox Timer Logic ===
+if (killbox_timer > 0) {
+    killbox_timer--;
+    if (killbox_timer <= 0 && instance_exists(killbox_instance)) {
+        instance_destroy(killbox_instance);
+        killbox_instance = noone;
+    }
+}
+
 
 // === DEBUG MODE TOGGLE ===
 if (debugKey) {

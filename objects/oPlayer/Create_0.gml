@@ -7,6 +7,10 @@ global.turn_count = 0;
 
 facing_dir = "south"; // default direction
 is_dead = false;
+killbox_instance = noone;
+killbox_timer = 0;
+
+
 
 // Target position to move to
 target_x = x;
