@@ -12,7 +12,7 @@ target_x = x;
 target_y = y;
 buffered_h = 0;
 buffered_v = 0;
-tile_size = oPlayer.tile_size;
+tile_size = 16;
 
 // Find the cambox that contains this object
 cambox = noone;
