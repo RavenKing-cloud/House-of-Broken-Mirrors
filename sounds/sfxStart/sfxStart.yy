@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":27.44644,
+  "duration":54.86424,
   "name":"sfxStart",
   "parent":{
     "name":"OST",
@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"sfxStart.wav",
   "type":0,
-  "volume":0.05,
+  "volume":0.15,
 }

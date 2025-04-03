@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"pause screen",
-    "path":"folders/Sprites/pause screen.yy",
+    "name":"ENV",
+    "path":"folders/Sprites/ENV.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

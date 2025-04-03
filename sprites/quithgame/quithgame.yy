@@ -2,10 +2,10 @@
   "$GMSprite":"",
   "%Name":"quithgame",
   "bboxMode":0,
-  "bbox_bottom":250,
+  "bbox_bottom":249,
   "bbox_left":38,
   "bbox_right":227,
-  "bbox_top":207,
+  "bbox_top":206,
   "collisionKind":1,
   "collisionTolerance":0,
   "DynamicTexturePage":false,
@@ -14,6 +14,7 @@
   "frames":[
     {"$GMSpriteFrame":"","%Name":"f33f9089-5ad5-4e2b-816b-a72bbead92e6","name":"f33f9089-5ad5-4e2b-816b-a72bbead92e6","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"","%Name":"374392b6-4a91-4e2a-a3df-9ecb9717bd26","name":"374392b6-4a91-4e2a-a3df-9ecb9717bd26","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"a55ae91e-36be-45e1-8f24-c93e901750f8","name":"a55ae91e-36be-45e1-8f24-c93e901750f8","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -27,8 +28,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"pause screen",
-    "path":"folders/Sprites/pause screen.yy",
+    "name":"ENV",
+    "path":"folders/Sprites/ENV.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
@@ -51,7 +52,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":2.0,
+    "length":3.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -76,6 +77,9 @@
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"374392b6-4a91-4e2a-a3df-9ecb9717bd26","path":"sprites/quithgame/quithgame.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"b7b136d6-be66-4930-8827-37804a7e0a37","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"a55ae91e-36be-45e1-8f24-c93e901750f8","path":"sprites/quithgame/quithgame.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"86f1f435-36f7-4670-9b23-9c8931a3e4b6","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

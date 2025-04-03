@@ -2,10 +2,10 @@
   "$GMSprite":"",
   "%Name":"reset_lelvel",
   "bboxMode":0,
-  "bbox_bottom":124,
+  "bbox_bottom":122,
   "bbox_left":35,
   "bbox_right":225,
-  "bbox_top":84,
+  "bbox_top":82,
   "collisionKind":1,
   "collisionTolerance":0,
   "DynamicTexturePage":false,
@@ -14,6 +14,7 @@
   "frames":[
     {"$GMSpriteFrame":"","%Name":"7e158c50-4b09-477c-9f13-7a1075b06eb3","name":"7e158c50-4b09-477c-9f13-7a1075b06eb3","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"","%Name":"8edc8222-033f-4ae4-b74a-5c993ae6c9b3","name":"8edc8222-033f-4ae4-b74a-5c993ae6c9b3","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"eca81d75-419f-4f56-914b-8b4061d7bfbb","name":"eca81d75-419f-4f56-914b-8b4061d7bfbb","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -27,8 +28,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"pause screen",
-    "path":"folders/Sprites/pause screen.yy",
+    "name":"ENV",
+    "path":"folders/Sprites/ENV.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
@@ -51,7 +52,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":2.0,
+    "length":3.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -76,6 +77,9 @@
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"8edc8222-033f-4ae4-b74a-5c993ae6c9b3","path":"sprites/reset_lelvel/reset_lelvel.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"b5eeef11-a2ab-4b6b-b1a6-6ee6b026bc3b","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"eca81d75-419f-4f56-914b-8b4061d7bfbb","path":"sprites/reset_lelvel/reset_lelvel.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"db17f2fe-4917-42f0-bcce-fc4ec9899850","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

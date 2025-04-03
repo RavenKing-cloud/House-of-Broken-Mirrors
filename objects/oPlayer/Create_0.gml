@@ -55,6 +55,10 @@ inTransition = false;
 freeze = false;
 transitionTimer = 0;
 last_cam_box = noone;
+just_entered_cam_box = false;
+cam_box_entry_timer = 0; // frames remaining
+
+
 // In the Create event of an appropriate controller or player object:
 global.last_cam_box = instance_find(oCamBox, 0); // Ensure this is set to a valid instance
 
